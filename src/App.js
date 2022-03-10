@@ -1,9 +1,7 @@
-// styles
 import { QueryClient, QueryClientProvider } from "react-query";
-import "./App.css";
 
-// components
-import Characters from "./components/Characters/Characters";
+// COMPONENTS:
+import Characters from "./containers/Characters/Characters";
 
 const queryClient = new QueryClient();
 
