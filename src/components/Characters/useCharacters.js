@@ -4,6 +4,7 @@ import axios from "../../axios/axiosInstance";
 export default function useCharacters() {
   const fetchCharacters = async () => {
     const { data } = await axios.get("/character");
+    console.log(data);
     return data.results;
   };
 
