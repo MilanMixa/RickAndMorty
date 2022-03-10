@@ -9,7 +9,7 @@ function SingleCharacter({ image, name, status, species, location }) {
   };
 
   return (
-    <div className=" text-white flex my-4 mx-4">
+    <div className=" text-white flex my-4 mx-auto">
       <img className="inline  rounded-l-xl" src={image} alt="avatar" />
       <div className="bg-gray-400 flex flex-col justify-evenly w-44 rounded-r-xl text-left">
         <div className="ml-2">
@@ -39,7 +39,7 @@ export default function Characters() {
   console.log(page);
   return (
     <div className="container mx-auto">
-      <div className="flex flex-wrap">
+      <div className="grid grid-cols-3">
         <AsyncList status={charactersStatus}>
           {characters?.map((character) => (
             <SingleCharacter key={character.id} {...character} />
