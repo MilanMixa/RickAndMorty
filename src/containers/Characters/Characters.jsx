@@ -11,7 +11,7 @@ export default function Characters() {
 
   return (
     <div className="container mx-auto">
-      <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-9">
+      <div className="grid pt-10 grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-9">
         <AsyncList status={charactersStatus}>
           {characters?.map((character) => (
             <SingleCharacter key={character.id} {...character} />
