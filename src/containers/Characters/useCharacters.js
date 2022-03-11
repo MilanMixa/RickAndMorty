@@ -12,7 +12,10 @@ export default function useCharacters() {
 
   const { data: response, status: charactersStatus } = useQuery(
     ["characters", page],
-    fetchCharacters
+    fetchCharacters,
+    {
+      keepPreviousData: true,
+    }
   );
 
   const characters = response?.results || [];
