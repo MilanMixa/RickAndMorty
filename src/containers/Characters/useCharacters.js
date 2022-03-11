@@ -7,17 +7,22 @@ export default function useCharacters() {
 
   const fetchCharacters = async ({ queryKey }) => {
     const { data } = await axios.get(`/character?page=${queryKey[1]}`);
-    return data.results;
+    return data;
   };
 
-  const { data: characters, status: charactersStatus } = useQuery(
+  const { data: response, status: charactersStatus } = useQuery(
     ["characters", page],
     fetchCharacters
   );
 
+  const characters = response?.results || [];
+  const info = response?.info || {};
+
   return {
+    info,
     characters,
     charactersStatus,
     page,
+    setPage,
   };
 }

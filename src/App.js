@@ -7,7 +7,7 @@ const queryClient = new QueryClient();
 
 function App() {
   return (
-    <div className="App bg-gray-450">
+    <div className="App bg-gray-450 min-h-screen">
       <QueryClientProvider client={queryClient}>
         <Characters />
       </QueryClientProvider>

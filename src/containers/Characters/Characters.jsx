@@ -7,7 +7,7 @@ import SingleCharacter from "../../components/SingleCharacter/SingleCharacter";
 import useCharacters from "./useCharacters";
 
 export default function Characters() {
-  const { characters, charactersStatus, page } = useCharacters();
+  const { info, characters, charactersStatus, page, setPage } = useCharacters();
 
   return (
     <div className="container mx-auto">
@@ -18,7 +18,7 @@ export default function Characters() {
           ))}
         </AsyncList>
       </div>
-      <Pagination page={page} />
+      <Pagination page={page} setPage={setPage} maxPage={info?.pages} />
     </div>
   );
 }
