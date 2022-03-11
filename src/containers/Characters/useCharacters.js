@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { useQuery } from "react-query";
-import axios from "../../axios/axiosInstance";
+import { getCharacters as getCharactersAPI } from "../../api/characters";
 
 export default function useCharacters() {
   const [page, setPage] = useState(1);
 
   const fetchCharacters = async ({ queryKey }) => {
-    const { data } = await axios.get(`/character?page=${queryKey[1]}`);
+    const { data } = await getCharactersAPI(queryKey[1]);
+
     return data;
   };
 
