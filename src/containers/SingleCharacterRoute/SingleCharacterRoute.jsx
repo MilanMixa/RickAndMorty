@@ -1,24 +1,16 @@
-import React, { useEffect, useState } from "react";
+import useSingleCharacterRoute from "./useSingleCharacterRoute";
 import { useParams } from "react-router-dom";
-import { getSingleCharacter } from "../../api/characters";
+import AsyncList from "../../hoc/AsyncList/AsyncList";
 
 export default function SingleCharacterRoute() {
-  const [data, setData] = useState({});
-  console.log(data);
   const { id } = useParams();
-  console.log(id);
+  const { singleCharacter, singleCharacterStatus } =
+    useSingleCharacterRoute(id);
 
-  useEffect(() => {
-    const fetchSingleCharacter = async (id) => {
-      try {
-        const { data } = await getSingleCharacter(id);
-        setData(data);
-      } catch (error) {
-        console.log(error.message);
-      }
-    };
-    fetchSingleCharacter(id);
-  }, [id]);
-
-  return <div className="text-white">{data.name}</div>;
+  return (
+    <AsyncList status={singleCharacterStatus}>
+      {/* <div className="text-white">{singleCharacter && singleCharacter?.name}</div> */}
+      <div className="text-white">{singleCharacter?.name}</div>
+    </AsyncList>
+  );
 }
