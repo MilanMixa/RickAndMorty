@@ -12,7 +12,7 @@ export default function SingleCharacterRoute() {
 
   return (
     <AsyncList status={singleCharacterStatus}>
-      {/* <div className="text-white">{singleCharacter && singleCharacter?.name}</div> */}
+      {/* <div className="text-white">{singleCharacter && singleCharacter.name}</div> */}
 
       {/* <div>{singleCharacter?.name}</div>
         <div>{singleCharacter?.status}</div>
