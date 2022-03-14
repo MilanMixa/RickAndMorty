@@ -6,7 +6,7 @@ export default function Routes() {
   return (
     <Switch>
       <Route path="/" element={<Characters />} />
-      <Route path="character" element={<SingleCharacterRoute />} />
+      <Route path="character/:id" element={<SingleCharacterRoute />} />
     </Switch>
   );
 }

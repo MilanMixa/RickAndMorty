@@ -6,6 +6,7 @@ export default function SingleCharacter({
   status,
   species,
   location,
+  id,
 }) {
   const colors = {
     Alive: "bg-green-500",
@@ -14,7 +15,7 @@ export default function SingleCharacter({
   };
 
   return (
-    <Link className="text-white flex container mx-auto" to="/character">
+    <Link className="text-white flex container mx-auto" to={`/character/${id}`}>
       <img
         className="inline rounded-l-xl h-72 min-w-[50%] object-cover"
         src={image}
