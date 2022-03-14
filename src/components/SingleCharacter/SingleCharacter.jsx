@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function SingleCharacter({
   image,
   name,
@@ -12,7 +14,7 @@ export default function SingleCharacter({
   };
 
   return (
-    <div className=" text-white flex container mx-auto">
+    <Link className="text-white flex container mx-auto" to="/character">
       <img
         className="inline rounded-l-xl h-72 min-w-[50%] object-cover"
         src={image}
@@ -37,6 +39,6 @@ export default function SingleCharacter({
           </p>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
