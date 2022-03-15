@@ -23,9 +23,7 @@ export default function SingleCharacter({
       />
       <div className="bg-gray-400 flex flex-col justify-evenly w-full rounded-r-xl text-left">
         <div className="ml-2">
-          <h3 className="text-2xl font-bold hover:text-orange-450  hover:cursor-pointer">
-            {name}
-          </h3>
+          <h3 className="text-2xl font-bold hover:text-orange-450">{name}</h3>
           <p>
             <span
               className={`w-2 h-2 rounded-xl ${colors[status]} inline-block mr-2`}
@@ -35,9 +33,7 @@ export default function SingleCharacter({
         </div>
         <div className="ml-2">
           <p>Last seen on:</p>
-          <p className="hover:text-orange-450  hover:cursor-pointer">
-            {location.name}
-          </p>
+          <p className="hover:text-orange-450">{location.name}</p>
         </div>
       </div>
     </Link>
